@@ -1,7 +1,8 @@
 # 개요
 MonoBehaviour 베이스에 간단한 FSM(Finite State Machine) 프레임워크입니다.
 
-##클래스
+## 클래스
+
 **FSMBehaviour\<S, M>** 는 머신 클래스이고 S는 enum 타입 M은 FSMBehaviour를 상속받는 클래스의 타입입니다.
 
 ```
@@ -15,8 +16,9 @@ public class CameraController : FSMBehaviour<CAMERA_STATE, CameraController>
 public class IdleState : FSMState<CAMERA_STATE, CameraController>
 ```
 
-##속성
-###FSMBehaviour\<S, M>
+## 속성
+
+### FSMBehaviour\<S, M>
 
 **public StateChangeEvent OnTransition**
 
@@ -26,7 +28,7 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 현재 상태를 확인할 수 있는 속성값 입니다.
 
-###FSMState\<S, M>
+### FSMState\<S, M>
 
 **protected M Machine**
 
@@ -36,8 +38,9 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 상태를 정의하는 속성이며, 상태 클래스를 상속받는 경우 반드시 구현해 줘야 합니다.
 
-##함수
-###FSMBehaviour\<S, M>
+## 함수
+
+### FSMBehaviour\<S, M>
 
 **protected void AddStates(params FSMState\<S, M>[] states)**
 
@@ -51,7 +54,7 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 머신을 주기적으로 갱신하기 위한 함수 입니다. 이 함수를 호출해야 머신이 동작합니다. 보통은 Update 또는 FixedUpdate에서 호출해 주면 됩니다.
 
-###FSMState\<S, M>
+### FSMState\<S, M>
 
 **public virtual void OnInitialize()**
 
