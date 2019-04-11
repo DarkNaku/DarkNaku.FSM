@@ -1,6 +1,12 @@
 # 개요
 MonoBehaviour 베이스에 간단한 FSM(Finite State Machine) 프레임워크입니다.
 
+## 개발 예정 기능
+
+* 상태별로 전환 가능한 다음 상태 지정 기능
+* 다음 상태에 매개변수 전달 기능
+* Execute 함수를 명시적인 호출하는 대신 Update와 FixedUpdate 예약 함수 오버라이드
+
 ## 클래스
 
 **FSMBehaviour\<S, M>** 는 머신 클래스이고 S는 enum 타입 M은 FSMBehaviour를 상속받는 클래스의 타입입니다.
