@@ -70,9 +70,9 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 상태 객체가 머신에 등록될 때 한번 호출 됩니다.
 
-**public virtual void OnEnter()**
+**public virtual void OnEnter(object param)**
 
-상태에 진입할 때 한번 호출 됩니다.
+상태에 진입할 때 한번 호출 됩니다. param의로 이전 상태에서 저장한 Param 변수의 값이 전달됩니다.
 
 **public virtual void OnLeave()**
 
