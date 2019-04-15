@@ -9,10 +9,12 @@ public abstract class FSMState<S, M>
 							where M : FSMBehaviour<S, M> {
 	protected M Machine { get; private set; }
 
+	public object Param { get; protected set; }
+
 	public abstract S State { get; }
 
 	public virtual void OnInitialize() { }
-	public virtual void OnEnter() { }
+	public virtual void OnEnter(object param) { }
 	public virtual void OnLeave() { }
 	public virtual S NextState() { return State; }
 	public virtual void Update() { }
@@ -21,6 +23,10 @@ public abstract class FSMState<S, M>
 		Assert.IsNotNull(machine);
 		Machine = machine;
 		OnInitialize();
+	}
+
+	public void ClearParam() {
+		Param = null;
 	}
 }
 
@@ -47,8 +53,9 @@ public class FSMBehaviour<S, M> : MonoBehaviour
 			S prevState = _state;
 			_states[_state].OnLeave();
 			_state = value;
-			_states[_state].OnEnter();
+			_states[_state].OnEnter(_states[prevState].Param);
 			OnTransition.Invoke(prevState, _state);
+			_states[prevState].ClearParam();
 		}
 	}
 
@@ -78,7 +85,7 @@ public class FSMBehaviour<S, M> : MonoBehaviour
 
 	protected void Execute() {
 		if (_isFirstExecute) {
-			_states[State].OnEnter();
+			_states[State].OnEnter(null);
 			_isFirstExecute = false;
 		}
 

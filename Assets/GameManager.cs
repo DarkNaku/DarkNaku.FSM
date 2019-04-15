@@ -33,7 +33,7 @@ public class GameManager : FSMBehaviour<GAME_STATE, GameManager> {
 		private bool _initializing = false;
 		public override GAME_STATE State { get { return GAME_STATE.INITIALIZE; } }
 
-		public override void OnEnter() {
+		public override void OnEnter(object param) {
 			Machine.StartCoroutine(CoInitialize());
 		}
 
