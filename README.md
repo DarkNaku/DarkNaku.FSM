@@ -44,6 +44,10 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 상태를 정의하는 속성이며, 상태 클래스를 상속받는 경우 반드시 구현해 줘야 합니다.
 
+**protected object Param**
+
+다음 상태에 전달할 매개변수를 일시적으로 전달할 용도의 변수이며 다음 상태의 OnEnter 이벤트의 파라미터로 전달됩니다.
+
 ## 함수
 
 ### FSMBehaviour\<S, M>
