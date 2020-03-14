@@ -33,7 +33,7 @@ public class IdleState : FSMState<CAMERA_STATE, CameraController>
 
 ### FSMState\<S, M>
 
-**protected M Machine**
+**protected M FSM**
 
 머신을 참조하고 있는 속성 입니다.
 
