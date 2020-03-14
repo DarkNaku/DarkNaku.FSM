@@ -5,6 +5,10 @@ using UnityEngine;
 public class Controller : MonoBehaviour {
     [SerializeField] private GameManager _gm = null;
 
+    private void Start() {
+        Debug.Log("Press 'S' Key To Start. 'E' Key is for Stop.");
+    }
+
     private void Update() {
 		if (Input.GetKeyDown(KeyCode.S)) _gm.StartFSM(GAME_STATE.INITIALIZE);
 		if (Input.GetKeyDown(KeyCode.E)) _gm.StopFSM();
