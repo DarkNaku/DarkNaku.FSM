@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/release-1.0.0-brightgreen) ![](https://img.shields.io/github/forks/DarkNaku/DarkNaku.FSM) ![](https://img.shields.io/github/stars/DarkNaku/DarkNaku.FSM) ![](https://img.shields.io/github/issues/DarkNaku/DarkNaku.FSM?color=red) ![](https://img.shields.io/badge/license-MIT-green) [![](https://img.shields.io/github/watchers/DarkNaku/DarkNaku.FSM?label=Watch)](https://github.com/DarkNaku/DarkNaku.FSM/subscription)
+[![](https://img.shields.io/badge/release-1.0.0-brightgreen)](https://github.com/DarkNaku/DarkNaku.FSM/tree/release/1.0.0) ![](https://img.shields.io/github/forks/DarkNaku/DarkNaku.FSM) ![](https://img.shields.io/github/stars/DarkNaku/DarkNaku.FSM) ![](https://img.shields.io/github/issues/DarkNaku/DarkNaku.FSM?color=red) ![](https://img.shields.io/badge/license-MIT-green) [![](https://img.shields.io/github/watchers/DarkNaku/DarkNaku.FSM?label=Watch)](https://github.com/DarkNaku/DarkNaku.FSM/subscription)
 
 
 
