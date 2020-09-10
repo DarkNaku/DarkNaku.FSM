@@ -1,4 +1,9 @@
+![](https://img.shields.io/badge/release-1.0.0-brightgreen)![](https://img.shields.io/github/forks/DarkNaku/DarkNaku.FSM)![](https://img.shields.io/github/stars/DarkNaku/DarkNaku.FSM)![](https://img.shields.io/github/issues/DarkNaku/DarkNaku.FSM?color=red)![](https://img.shields.io/badge/license-MIT-green)
+
+
+
 # 개요
+
 MonoBehaviour 베이스에 간단한 FSM(Finite State Machine) 프레임워크입니다.
 
 
