@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 
-[CustomEditor(typeof(FSMBehaviourV2))]
+[CustomEditor(typeof(VFSMBehaviour))]
 public class FSMBehaviourV2Editor : Editor {
     private bool _isDirty = false;
 
@@ -20,8 +20,8 @@ public class FSMBehaviourV2Editor : Editor {
     }
 
     private void DrawFirstStateDropdown() {
-        var filedInfo = typeof(FSMBehaviourV2).GetField("_firstState", BindingFlags.NonPublic | BindingFlags.Instance);
-        var fsm = target as FSMBehaviourV2;
+        var filedInfo = typeof(VFSMBehaviour).GetField("_firstState", BindingFlags.NonPublic | BindingFlags.Instance);
+        var fsm = target as VFSMBehaviour;
         var states = fsm.GetStateNames();
         var firstState = filedInfo.GetValue(fsm) as string;
         var beforeIndex = states.IndexOf(firstState);

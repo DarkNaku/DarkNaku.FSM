@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 [System.Serializable]
-public class FSMStateV2 {
+public class VFSMState {
     [System.Serializable]
     public class Transition {
         [SerializeField] private string _eventName = null;
@@ -14,16 +14,21 @@ public class FSMStateV2 {
 
         [SerializeField] private string _guid = null;
         public string GUID { get { return _guid; } }
+
+        public Transition(string eventName, string guid) {
+            _eventName = eventName;
+            _guid = guid;
+        }
     }
 
     [System.Serializable]
-    public class EventAction : UnityEvent<FSMBehaviourV2> { }
+    public class EventAction : UnityEvent<VFSMBehaviour> { }
 
     [SerializeField] private string _guid = null;
     public string GUID { 
         get { 
             if (string.IsNullOrEmpty(_guid)) {
-                Debug.LogWarning("[FSMStateV2] GUID : Is null. Something wrong.");
+                Debug.LogWarning("[VFSMState] GUID : Is null. Something wrong.");
                 _guid = Guid.NewGuid().ToString();
             }
 
@@ -69,7 +74,7 @@ public class FSMStateV2 {
         }
     }
 
-    public FSMStateV2() {
+    public VFSMState() {
         _guid = Guid.NewGuid().ToString();
     }
 }

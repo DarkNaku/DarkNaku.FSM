@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class FSMBehaviourV2 : MonoBehaviour {
-    [SerializeField][HideInInspector] private List<FSMStateV2> _states = new List<FSMStateV2>();
+ [DisallowMultipleComponent]
+public sealed class VFSMBehaviour : MonoBehaviour {
+    [SerializeField] private List<VFSMState> _states = new List<VFSMState>();
     [SerializeField][HideInInspector] private string _firstState = null;
 
-    private Dictionary<string, FSMStateV2> _stateTable = new Dictionary<string, FSMStateV2>();
-    private FSMStateV2 _current = null;
-    private FSMStateV2 _next = null;
+    private Dictionary<string, VFSMState> _stateTable = new Dictionary<string, VFSMState>();
+    private VFSMState _current = null;
+    private VFSMState _next = null;
 
     public void TriggerEvent(string eventName, bool immediately = false) {
         if (_current == null) {
-            Debug.LogErrorFormat("[FSM-{0}] TriggerEvent : Current State is null.", name);
+            Debug.LogErrorFormat("[VFSM-{0}] TriggerEvent : Current State is null.", name);
             return;
         }
 
@@ -22,7 +23,7 @@ public sealed class FSMBehaviourV2 : MonoBehaviour {
             _next = _stateTable[nextStateName];
             if (immediately) TransferState();
         } else {
-            Debug.LogErrorFormat("[FSM-{0}] TriggerEvent : Event({1}) dosen't exist in the state({2})", 
+            Debug.LogErrorFormat("[VFSM-{0}] TriggerEvent : Event({1}) dosen't exist in the state({2})", 
                 name, eventName, _current.StateName);
         }
     }
